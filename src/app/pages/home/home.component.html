@@ -1,1 +1,53 @@
-<p>home works!</p>
+<div class="container mt-6 mx-auto">
+    <h1>Lista de Productos desde el Servicio</h1>
+    <div class="flex flex-col">
+        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+            <div class="overflow-hidden">
+              <table class="min-w-full">
+                <thead class="border-b">
+                  <tr>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                        #
+                    </th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                        ID
+                    </th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                        Descripción
+                    </th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                        Precio de Compra
+                    </th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                        Precio de Venta
+                    </th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                        Ganancia
+                    </th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                        Existencia
+                    </th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                        Editar
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b" *ngFor="let producto of listaProductos; index as col">
+                        <td>{{col + 1}}</td>
+                        <td>{{producto.id}}</td>
+                        <td>{{producto.descripcion}}</td>
+                        <td>{{producto.precioCompra}}</td>
+                        <td>{{producto.precioVenta}}</td>
+                        <td>{{producto.ganancia}}</td>
+                        <td>{{producto.existencia}}</td>
+                        <td><a (click)="editar(producto.id)" class="cursor-pointer inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Editar</a></td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
