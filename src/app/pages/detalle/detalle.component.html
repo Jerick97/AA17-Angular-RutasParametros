@@ -1,1 +1,12 @@
-<p>detalle works!</p>
+<div class="container mx-auto mt-6">
+    <h1>Producto NRO: {{id}}</h1> <!--El código cambia de acuerdo al Producto Seleccionado-->
+    <!--Formulario donde Visualizamos el detalle del Producto-->
+    <ul *ngFor="let producto of productoDetalle">
+        <li>id: {{producto.id}}</li>
+        <li>Descripción: {{producto.descripcion}}</li>
+        <li>Precio Compra: {{producto.precioCompra}}</li>
+        <li>Precio Venta: {{producto.precioVenta}}</li>
+        <li>Ganancia: {{producto.ganancia}}</li>
+        <li>Existencia: {{producto.existencia}}</li>
+    </ul>
+</div>

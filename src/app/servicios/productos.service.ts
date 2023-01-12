@@ -47,4 +47,9 @@ export class ProductosService {
     },
   ]
   constructor() { }
+
+  detalleProducto(id:number){ //recibimos el id del producto
+    const items = this.productos.filter(item => item.id === id) //solo retorna el detalle del producto igual al id recibido
+    return items;
+  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductosService } from 'src/app/servicios/productos.service';
 
 @Component({
@@ -8,13 +9,13 @@ import { ProductosService } from 'src/app/servicios/productos.service';
 })
 export class HomeComponent implements OnInit {
   listaProductos !: any[];
-  constructor(private dataServices:ProductosService) { }
+  constructor(private dataServices:ProductosService,private router:Router) { } //Importamos los Servicios y Router para dirigir a la pagina detalle
 
   ngOnInit(): void {
     this.listaProductos = this.dataServices.productos; //el array con los productos del servicio se lo pasamos al array listaProductos
   }
 
   editar(id:number){
-    console.log(id);
+    this.router.navigate(['/detalle',id]);
   }
 }
